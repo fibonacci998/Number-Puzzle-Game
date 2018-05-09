@@ -37,10 +37,7 @@ public class Screen extends javax.swing.JFrame{
                 lbTime.setText(time+"");
             }
         });
-        synchronized(clock){      
-            clock.start();
-        }
-        
+        clock.start();
     }
     void initMatrix(){
         String choose=(String) cbChoose.getSelectedItem();
@@ -140,8 +137,8 @@ public class Screen extends javax.swing.JFrame{
         jLabel3 = new javax.swing.JLabel();
         btnNewGame = new javax.swing.JButton();
         cbChoose = new javax.swing.JComboBox<>();
-        lbCountMove = new javax.swing.JTextField();
-        lbTime = new javax.swing.JTextField();
+        lbCountMove = new javax.swing.JLabel();
+        lbTime = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -286,15 +283,9 @@ public class Screen extends javax.swing.JFrame{
 
         cbChoose.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "3x3", "4x4" }));
 
-        lbCountMove.setEditable(false);
-        lbCountMove.setBackground(new java.awt.Color(204, 204, 204));
         lbCountMove.setText("0");
-        lbCountMove.setBorder(null);
 
-        lbTime.setEditable(false);
-        lbTime.setBackground(new java.awt.Color(204, 204, 204));
         lbTime.setText("0");
-        lbTime.setBorder(null);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -307,19 +298,19 @@ public class Screen extends javax.swing.JFrame{
                         .addComponent(lb3x3, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(169, 169, 169)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnNewGame)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGap(48, 48, 48)
                                 .addComponent(lbCountMove))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel2)
-                                .addGap(39, 39, 39)
-                                .addComponent(lbTime, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(52, 52, 52)
+                                .addComponent(lbTime))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(45, 45, 45)
                                 .addComponent(cbChoose, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(136, Short.MAX_VALUE))
         );
@@ -329,14 +320,17 @@ public class Screen extends javax.swing.JFrame{
                 .addGap(43, 43, 43)
                 .addComponent(lb3x3, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel1)
-                    .addComponent(lbCountMove, javax.swing.GroupLayout.DEFAULT_SIZE, 21, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbTime, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addGap(13, 13, 13)
+                    .addComponent(jLabel1)
+                    .addComponent(lbCountMove))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(jLabel2))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(lbTime)))
+                .addGap(11, 11, 11)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(cbChoose, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -447,8 +441,8 @@ public class Screen extends javax.swing.JFrame{
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel lb3x3;
-    private javax.swing.JTextField lbCountMove;
-    private javax.swing.JTextField lbTime;
+    private javax.swing.JLabel lbCountMove;
+    private javax.swing.JLabel lbTime;
     // End of variables declaration//GEN-END:variables
 
 }
